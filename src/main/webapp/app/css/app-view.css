@@ -1,0 +1,26 @@
+@charset "ISO-8859-1";
+body {
+    padding: 30px 0;
+}
+
+#item {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+#item .row {
+    padding: 10px 10;
+    border-bottom: dashed 1px #aaaa;
+}
+#item .row input {
+    margin-bottom: 0;
+}
+item .row .avl
+{
+    background-color: #eee;
+    font-style: otalic;
+    color: #aaa;
+}
+.flr {
+    float: right;
+}
