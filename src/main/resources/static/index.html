@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html >
 <head>
-<meta charset="ISO-8859-1">
-    <title>Johnathon shop</title>
+<meta charset="utf-8">
+    <title> Johnathon shop</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link href="css/normalize.css" rel="stylesheet" media="screen">
     <link href="css/foundation.css" rel="stylesheet" media="screen">
     <link href="css/app-view.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" type="text/css" href="webapp/app/css/webstyle.css" media="screen">
     <script src="js/angular.min.js"></script>
     <script src="js/angular-mocks.js"></script>
 
@@ -14,23 +15,24 @@
 
 </head>
 <body ng-app="shop" ng-controller="Controller">
+	
       <div class="middle-box text-center loginscreen  animated fadeInDown">
         <div>
             <div>
-                <h1 class="logo-name">IGraph</h1>
+                <h1 class="logo-name">Welcome to Johnathon's Online Grocery Store</h1>
             </div>
-            <h3>Welcome to IGraph</h3>           
+            <h3>Login to the Store</h3>           
             <form class="m-t" role="form" name="loginToIGraph" >
                 <div class="form-group">
                     <input type="text" class="form-control" placeholder="Username" required="" ng-model="user.username" >
-                </div>
+                </div><br>
                 <div class="form-group">
                     <input type="password" class="form-control" placeholder="Password" required="" ng-model="user.password" >
-                </div>
+                </div><br>
                 <button type="submit" class="btn btn-primary block full-width m-b" ng-click="login.loginUser(user)">Login</button>
                 <a href="#"><small>Forgot password?</small></a>
-                <p class="text-muted text-center"><small>Do not have an account?</small></p>
-                <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a>
+                <p class="text-muted text-center"><small>Do not have an account?</small>
+                <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a></p>
             </form>           
         </div>
     </div>
@@ -51,7 +53,7 @@
                                     
                                     placeholder="Stud ID">
 
-                             </div>
+                             </div> <br>
                             <div class="medium-8 columns">
                         <input 
                                 type="text"

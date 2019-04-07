@@ -24,3 +24,14 @@ item .row .avl
 .flr {
     float: right;
 }
+.m-t{
+		padding-top: 30px;
+		padding-left: 20px;
+		background: #ccfba3;
+		width: 62%;
+		height: 110%;
+		border-radius: 80px;
+		opacity: .80;
+		border: 5px solid #000000;
+		font-size: 20px;
+}
