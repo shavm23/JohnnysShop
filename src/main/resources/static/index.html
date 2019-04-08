@@ -48,11 +48,16 @@
 				font-family:Lucida Calligraphy;
 				font-size: 30px;
 			}
-			h1{
+			h1.lognam{
 				font-family:Lucida Calligraphy;
 				font-size: 40px;
 				color: blue;
 				background-color: white;
+			}
+			h1.lonam{
+				font-family:Lucida Calligraphy;
+				font-size: 40px;
+				color: blue;
 			}
 			select{	
 				width:150px;
@@ -66,8 +71,8 @@
    	<div class="middle-box text-center loginscreen  animated fadeInDown">
         <div>
             <div>
-                <p><center><h1 class="logo-name">Welcome to Johnathon's</h1><center></center></center></p>
-                <p><center><h1>Online Grocery Store</h1></center></p>
+                <p><center><h1 class="lognam">Welcome to Johnathon's</h1><center></center></center></p>
+                <p><center><h1 class="lognam">Online Grocery Store</h1></center></p>
             </div>         
             <form class="m-t" role="form" name="loginToIGraph" >
                	<center><div id = "nav">
@@ -91,7 +96,7 @@
     <div class="shp">
      	<div class="column">
 
-        	<h1>Johnathon's Shop</h1>
+        	<h1 class = "lonam">Johnathon's Shop</h1>
 
 				<form novalidate id="reqForm" >
 					<div class="row">
@@ -103,11 +108,11 @@
 							<label> Enter Student Name: </label><input type="text" name="stud_name" ng-model="req.name" placeholder="Name">
 
 						</div>
-                    </div>
+                    </div><br>
                      
                             
                             
-                    <label> QUANTITY </label>
+                    <label> Quantity </label>
                     <div class="row">
 						<div class="small-2 columns">
                              
@@ -123,17 +128,10 @@
                             
 
                         </div>
-                    </div>
+                    </div><br>
                     <div class="row">
 						<div class="small-2 columns">
-                            <input 
-								type="text"
-								name="Location"
-								ng-model="req.location"
-								ng-trim="false"
-								
-								placeholder="Location">
-
+                            <input type="text" name="Location" ng-model="req.location" ng-trim="false" placeholder="Location">
                         </div>
                     </div>
 				</form>
@@ -143,15 +141,8 @@
 						<div class="row">
 							<div class="small-8 columns itemName">
 								<label for="item-?">
-									<input
-										type="checkbox"
-										name="item-?"
-										id="item-?">
-										?
+									<input type="checkbox" name="item-?" id="item-?">
 								</label>
-								<div class="small-1 columns itempic">?</div>
-								<div class="mediuml-1 columns itemQTY">?</div>
-                                <div class="small-1 columns itemPrice">?</div>
                             </div>
 						</div>
 
@@ -161,7 +152,7 @@
 							<input type="button" ng-click="update(req)" value="Save" />
 							<i class="fa fa-print"></i> Send Request
                         
-                        </div>
+                        </div><br>
 
                      
                     </form>
