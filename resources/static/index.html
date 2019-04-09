@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html >
+<head>
+<meta charset="utf-8">
+    <title> Johnathon shop</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<!--     <link href="css/normalize.css" rel="stylesheet" media="screen"> -->
+<!--     <link href="css/foundation.css" rel="stylesheet" media="screen"> -->
+<!--     <link href="css/app-view.css" rel="stylesheet" media="screen"> -->
+
+    <link rel="stylesheet" type="text/css" href="css/webstyle.css" media="screen">
+    <script src="js/angular.min.js"></script>
+    <script src="js/angular-mocks.js"></script>
+
+         <script src="js/johnShop.js"></script>
+         <style type = "text/css">
+         	#nav{
+				padding-top: 30px;
+				padding-left: 20px;
+				background: #f90335;
+				width: 35%;
+				height: 110%;
+				border-radius: 40px;
+				opacity: .90;
+				border: 5px solid #000000;
+				font-size: 20px;
+			}
+			.shp{
+				padding-top: 30px;
+				padding-left: 20px;
+				background: #f90335;
+				width: 40%;
+				height: 110%;
+				border-radius: 40px;
+				opacity: .90;
+				border: 5px solid #000000;
+				font-size: 20px;
+			}
+
+			body{
+					background:url(crave.jpg);
+					background-size: 100% 1200px;
+					padding-top:0px;
+					background-repeat: no-repeat;
+			
+			}
+			h3{
+				font-family:Lucida Calligraphy;
+				font-size: 30px;
+			}
+			h1.lognam{
+				font-family:Lucida Calligraphy;
+				font-size: 40px;
+				color: blue;
+				background-color: white;
+			}
+			h1.lonam{
+				font-family:Lucida Calligraphy;
+				font-size: 40px;
+				color: blue;
+			}
+			select{	
+				width:150px;
+				border: 2px solid black;
+			}
+         </style>
+
+</head>
+<body ng-app="shop" ng-controller="Controller">
+	
+   	<div class="middle-box text-center loginscreen  animated fadeInDown">
+        <div>{{30+40}}
+            <div>
+                <p><center><h1 class="lognam">Welcome to Johnathon's</h1><center></center></center></p>
+                <p><center><h1 class="lognam">Online Grocery Store</h1></center></p>
+            </div>         
+            <form class="m-t" role="form" name="loginToIGraph" >
+               	<center><div id = "nav">
+               	<center><h3>LOGIN TO THE STORE</h3></center>
+	                <div class="form-group">
+	                    <label>Username</label>		<input type="text" class="form-control" placeholder="Username" required="" ng-model="user.username" ></label>
+	                </div><br>
+	                <div class="form-group">
+	                    <label>Password</label>		<input type="password" class="form-control" placeholder="Password" required="" ng-model="user.password" >
+	                	<a href="#"><small>         Forgot password?</small></a><br>
+	                </div>
+	                <center><button type="submit" class="btn btn-primary block full-width m-b" ng-click="login.loginUser(user)">Login</button>
+	                </center>
+	                <p class="text-muted text-center"><small>Do not have an account?</small>
+	                <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a></p>
+            	</div></center>
+            </form>          
+        </div>
+    </div><br><br>
+
+    <div class="shp">
+     	<div class="column">
+
+        	<h1 class = "lonam">Johnathon's Shop</h1>
+
+				<form novalidate id="reqForm" >
+					<div class="row">
+						<div class="small-2 columns">
+							<label> Enter Student ID NO.: </label> <input type="text" name="stud_ID" ng-model="req.id" placeholder="Stud ID">
+
+						</div> <br>
+						<div class="medium-8 columns">
+							<label> Enter Student Name: </label><input type="text" name="stud_name" ng-model="req.name" placeholder="Name">
+
+						</div>
+                    </div><br>
+                     
+                            
+                            
+                    <label> Quantity </label>
+                    <div class="row">
+						<div class="small-2 columns">
+                             
+							<select  placeholder="quantity" id = "qty">
+								<option > 1 </option>
+								<option > 2 </option>
+								<option > 3 </option>
+								<option > 4 </option>
+								<option > 5 </option>
+								<option > 6 </option>
+								<option > 7 </option>
+							</select>
+                            
+
+                        </div>
+                    </div><br>
+                    <div class="row">
+						<div class="small-2 columns">
+                            <input type="text" name="Location" ng-model="req.location" ng-trim="false" placeholder="Location">
+                        </div>
+                    </div>
+				</form>
+                       
+
+					<form id="items">
+						<div class="row">
+							<div class="small-8 columns itemName">
+								<label for="item-?">
+									<input type="checkbox" name="item-?" id="item-?">
+								</label>
+                            </div>
+						</div>
+
+
+						<div class="row">
+                         
+							<input type="button" ng-click="add()" value="Save" />
+							<i class="fa fa-print"></i> Send Request
+                        
+                        </div><br>
+
+                     
+                    </form>
+                        
+
+                    
+                    <div class="row">
+						<table>
+							<tr>
+								<th>Name</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th>AVL</th>
+								<th>Image</th> 
+
+							</tr>
+						</table>
+							<div>
+							   <h5>
+								<select ng-model="req.snack">
+								<option ng-repeat="snack in snacks" value="{{snack}}" >  
+								{{snack.name}} QTY {{snack.qty}} Price {{snack.price}}
+						   
+								</option>
+								</select>
+								</h5>
+								{{$scope.req.snack.price }}
+						   
+							</div>
+					</div>
+    
+					<div>
+					{{req.snack.price * request.qty}}
+					 {{request}}
+					 
+					</div>
+			</div>
+		</div>
+                                
+                                
+                               
+
+                        
+                                 
+
+	
+	</body>
+</html>
