@@ -13,6 +13,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.mysql.cj.jdbc.Blob;
 
 import Entity.Snack;
 
@@ -21,7 +22,7 @@ public class SnackDb extends SQLProvider <Snack>
 {
 
 	Logger logger = LogManager.getLogger(SnackDb.class);
-	public static final String TABLE_NAME = "Snack";
+	public static final String TABLE_NAME = "snack";
 	
 			
 	@Override
@@ -30,7 +31,7 @@ public class SnackDb extends SQLProvider <Snack>
 			statement = connect.createStatement();
 			if (statement
 					.execute("CREATE TABLE if not exists "+TABLE_NAME+
-							"(ID INTEGER PRIMARY KEY AUTOINCREMENT, Price	INTEGER, QTY INTEGER, Name VARCHAR(50),  AVL BOOLEAN)"))
+							"(ID INTEGER PRIMARY KEY AUTOINCREMENT, Price	INTEGER, QTY INTEGER, Name VARCHAR(50),  AVL BOOLEAN )"))
 			{
 				logger.debug("Snack table created");
 			} 
@@ -123,6 +124,7 @@ public class SnackDb extends SQLProvider <Snack>
 					Snack.setName(rs.getString("Name"));
 					Snack.setAVL(rs.getBoolean("AVL"));
 					
+					
 					return Snack;
 				}								
 			}				
@@ -141,7 +143,7 @@ public class SnackDb extends SQLProvider <Snack>
 	{		
 		try 
 		{	
-			String query = " UPDATE " +TABLE_NAME+ " SET  Price = ?, QTY = ?, Name = ?, AVL = ? " +
+			String query = " UPDATE " +TABLE_NAME+ " SET  Price = ?, QTY = ?, Name = ?, AVL = ?, " +
 					   " WHERE ID = ?";
 			PreparedStatement ps;		
 			ps = connect.prepareStatement(query);				

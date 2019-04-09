@@ -1,5 +1,8 @@
 package Entity;
 
+import java.io.InputStream;
+
+import com.mysql.cj.jdbc.Blob;
 
 public class Snack 
 {
@@ -8,14 +11,23 @@ public class Snack
 	private boolean AVL;
 	private int Price;
 	private int QTY;
+	private InputStream pic;
+
+
+
+
+	public InputStream getPic() {
+		return pic;
+	}
+
 
 	public Snack()
 	{
-		this(0,"cheetos",true,50,1);
+		this(0,"cheetos",true,50,1, null);
 	}
 
 		
-	public Snack(int id, String Name, boolean AVL, int Price, int QTY) {
+	public Snack(int id, String Name, boolean AVL, int Price, int QTY, Blob pic) {
 		super();
 		this.ID= id;
 		this.Name = Name;
@@ -76,6 +88,12 @@ public class Snack
 	public String toString() 
 	{
 		return "Snack [ID=" + ID + ", Name=" + Name + ", AVL=" + AVL + ", Price=" + Price + ", QTY=" + QTY + "]";
+	}
+
+
+	public void setPic(InputStream inputStream) {
+		pic =inputStream;
+		
 	}
 
 

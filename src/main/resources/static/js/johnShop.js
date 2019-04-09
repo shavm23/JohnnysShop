@@ -1,11 +1,15 @@
 var myApp = angular.module('shop',[]);
 
 myApp.controller('Controller',  function($scope,$http,$window,$interval) {
- $scope.req;
- $scope.add = function() {
-	 $http.post('/api/request/add', $scope.req).then(function(response) {});
-	 console.log($scope.req);
- }
-// to show all option
+ 
 	
+	$window.onload = function () {$http({
+		  method:'GET',
+			  url:'/api/Snack/all'})
+			  .then(function(response)
+			  {
+			  	$scope.snacks= response.data;
+			  	console.log($scope.snacks);
+			  	 
+			  })};
 });

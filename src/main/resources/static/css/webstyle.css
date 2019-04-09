@@ -1,0 +1,773 @@
+@charset "ISO-8859-1";
+@media screen and (min-width: 1366px) {
+#gallery-1 img {width:375px;}
+}
+@media screen and (min-width: 1440px) {
+#gallery-1 img {width:428px;}
+}
+@media screen and (min-width: 1600px) {
+#gallery-1 img {width:434px;}
+}
+@media screen and (min-width: 1920px) {
+#gallery-1 img {width:540px;}
+}
+
+@media and (min-width: 992px){
+/*desktop*/
+#main_div {
+width: 100%;
+max-width: 1200px;
+}
+}
+div#shell{
+	overflow:hidden;
+	height:100%;
+	width:100%;
+}
+body{
+	width:100%;
+	margin:auto;
+	min-width:600px;
+	max-width:2000px
+	}
+
+body {
+ 
+ 
+ background: url('.jpg');
+ background-size: no-repeat;
+ margin-left: 0px auto%;
+ background-position:center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+div#content{
+	overflow:auto;
+	width:101.5%;
+	height:100%;
+	margin-left:16.5px;
+}
+
+
+
+
+p.sansserif {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h4 {
+  color: #7ed321;
+}
+
+.row {
+  zoom: 1;
+}
+.row:before,
+.row:after {
+  content: "";
+  display: table;
+}
+.row:after {
+  clear: both;
+}
+.col-half {
+  padding-right: 10px;
+  float: left;
+  width: 50%;
+}
+.col-half:last-of-type {
+  padding-right: 0;
+}
+.col-third {
+  padding-right: 10px;
+  float: left;
+  width: 33.33333333%;
+}
+.col-third:last-of-type {
+  padding-right: 0;
+}
+ul {
+	
+ margin: 0px;
+ padding: 0px;
+ list-style: none;
+ font-family: arial;
+}
+
+ul li {
+ float: left;
+ width: 400px;
+ height: 60px;
+ background-color: #000000;
+ opacity: .9;
+ line-height: 60px;
+ text-align:center;
+ font-size: 23px;
+
+}
+
+ul li a {
+ text-decoration: none;
+ color: white;
+ display: block;
+}
+
+ul li a:hover {
+ background-color: purple;
+}
+
+ul li ul li{
+ display: none;
+}
+
+ul li:hover ul li {
+ display: block;
+}
+
+.header 
+{		
+		background: white;
+		color:blue;
+		border:3px solid black;
+		width: 600px;
+		margin: 0px auto;
+		text-align: center;
+		text-decoration: underline;
+		font-weight: bold;
+		margin-bottom: 30px;
+}
+
+.header1
+{
+	background: url ('.jpg');
+	border: 1px dashed green;
+	width: 600px;
+	height: 300px;
+	margin: 0px auto;
+	margin-top: 30px;
+	
+}
+
+.splashpage
+{
+	
+	position:;
+	
+}
+
+
+
+
+
+
+
+<!-- form -->
+
+body{
+	
+	margin: 0;
+	padding: 0;
+	
+} 
+.login-form{
+	opacity: 0.9;
+    filter: alpha(opacity=50);
+	box-shadow: 0 10px 80px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	width: 1000px;
+	height: auto;
+	position: absolute;
+	padding: 10px 25px;
+	background: #eee;
+	left: 50%;
+	top: 70%;
+	transform: translateX(-50%) translateY(-50%);
+	border-bottom: 15px solid orange;
+	border-radius: 8px;
+	
+	
+}
+
+.form{
+	width: 100%;
+	position: relative;
+	margin: 25px auto;
+}
+.input{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	margin: 15px auto;
+}
+
+.glow{
+	position: absolute;
+	right: 5px;
+	top: 16px;
+	font-size: 20px;
+	color: gray;
+}
+
+
+
+input[type="password"]:focus{
+	border:px solid #0AC986;
+}
+input[type="submit"]{
+	width: 100%;
+	height: 50px;
+	background: #0AC986;
+	font-family: sans-serif,Arial;
+	font-size: 16px;
+	color: #fff;
+	outline: none;
+	border-radius: 5px;
+	border: 0px;
+	cursor: pointer;
+}
+
+
+.button {
+  border-radius: 4px;
+  background-color: #0AC986;
+  font-family: sans-serif,Arial;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 20px;
+  width: 100%;
+  height: 60px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 10;
+  right: 0;
+}
+
+
+
+.button:hover {background-color: green}
+
+.button:active {
+  background-color: #3e8e41;
+  
+  transform: translateY(4px);
+}
+
+input[type="reset"]{
+	width: 100%;
+	height: 50px;
+	background: red;
+	font-family: sans-serif,Arial;
+	font-size: 16px;
+	color: #fff;
+	outline: none;
+	border-radius: 5px;
+	border: 0px;
+	cursor: pointer;
+}
+.error-msg{
+	font-size: 16px;
+	font-family: sans-serif,Arial;
+	color: red;
+	margin-top:50px;
+	display: none;
+}
+
+
+
+
+input[type="date"],
+
+
+input[type="password"]{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	outline: none;
+	border:2px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	font-family: sans-serif,Arial;
+	color: gray;
+}
+
+
+select{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	outline: none;
+	border:2px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	font-family: sans-serif,Arial;
+	color: gray;
+}
+
+input[type="number"]{
+	width: 100%;
+	height: 50px;
+	position: relative;
+	outline: none;
+	border:2px solid #ddd;
+	border-radius: 5px;
+	font-size: 16px;
+	font-family: sans-serif,Arial;
+	color: gray;
+}
+
+select:hover {
+
+		color: black;
+
+	}
+
+/*Slideshow */	
+#slide{
+	width:96%;
+	}
+	
+* {
+	box-sizing: border-box
+}
+
+.mySlides {
+	display: none
+}
+
+.slideshow-container {
+	width: 1200px;
+	position: relative;
+	margin: -10px;
+
+}
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 0 3px 3px 0;
+}
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 3px 0 0 3px;
+}
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 8px 12px;
+	position: absolute;
+	bottom: 8px;
+	width: 100%;
+	text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 13px;
+	width: 13px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+	background-color: #717171;
+}
+/* Fading animation */
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 2s;
+	animation-name: fade;
+	animation-duration: 2s;
+}
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}	
+
+	
+.succesfuldating
+{
+	font: color red;
+}
+
+A.class1 {color:#blue;}
+A.class1:link  {text-decoration: none; color:black;font-size: 40px;}
+A.class1:visited {text-decoration: none; color: black;}
+A.class1:hover {text-decoration: none; color: green;}
+A.class1:active {text-decoration: none; color: red;}
+
+
+
+
+	
+.collage {
+    /* The image used */
+    background-image: url("smart.jpg");
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 3200px 800px;
+}
+
+
+.parallax
+ {
+    /* The image used */
+    background-image: url("scroll.png");
+
+    /* Set a specific height */
+    min-height: 500px; 
+	
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 3200px 800px;
+}
+
+.parallax2 {
+    /* The image used */
+    background-image: url("it.jpg");
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 3200px 800px;
+}
+
+.material-iconss {vertical-align:-14%}
+
+    .indent-20{
+    	margin: 10px;
+    }
+
+		
+	
+	.footer-distributed{
+	background-color:black;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+	text-align: left;
+
+	padding: 50px 60px 40px;
+	margin-top: 80px;
+	overflow: hidden;
+}
+
+.lovecoll{
+    /* The image used */
+    background-image: url("lovey.jpg"); 
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 3200px 800px;
+}
+
+.success{
+    /* The image used */
+    background-image: url("suc.jpg"); 
+
+    /* Set a specific height */
+    min-height: 500px; 
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 3200px 1000px;
+}
+/* Footer left */
+
+.footer-distributed .footer-left{
+	float: left;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	
+	<!-- Check Later --!>
+	background: url ('.jpg');
+	color:  #ffffff;
+	font: normal 55px 'Cookie', cursive;
+	margin: 0 0 10px;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+	
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+	font-size: 23px;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons{
+	margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	float: right;
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px 42px 0 0;
+	color: #ffffff;
+}
+
+/* The contact form */
+
+.footer-distributed form{
+	display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea{
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #1f2022;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	border: none;
+	resize: none;
+
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  #d1d2d2;
+
+	width: 400px;
+	padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
+
+.footer-distributed form input{
+	height: 55px;
+	margin-bottom: 15px;
+}
+
+.footer-distributed form textarea{
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed form button{
+	border-radius: 3px;
+	background-color:  #33383b;
+	color: #ffffff;
+	border: 0;
+	padding: 15px 50px;
+	font-weight: bold;
+	float: right;
+}
+
+
+@media (max-width: 1000px) {
+
+	.footer-distributed {
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 250px;
+	}
+
+	.footer-distributed form button{
+		padding: 10px 35px;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.footer-distributed{
+		padding: 30px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer-distributed .footer-left{
+		margin-bottom: 40px;
+	}
+
+	.footer-distributed form{
+		margin-top: 30px;
+	}
+
+	.footer-distributed form{
+		display: block;
+	}
+
+	.footer-distributed form button{
+		float: none;
+	}
+}
+
+	input[type=text], textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid #DDDDDD;
+}
+ 
+input[type=text]:focus, 
+
+textarea:focus 
+{
+  box-shadow: 0 0 5px green;
+  padding: 3px 0px 3px 3px;
+  margin: 5px 1px 3px 0px;
+  border: 1px solid rgba(81, 203, 238, 1);
+}
+	
+
+
+	
+	
+	
+
+
+
+
+
+
+
