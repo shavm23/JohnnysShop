@@ -12,5 +12,6 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 			  	console.log($scope.snacks);
 			  	console.log($scope.checklist);
 			  })};
-			  $scope.checklist=[];
+			  $scope.chosen;
+			  $scope.choice;
 });
