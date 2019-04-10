@@ -26,7 +26,7 @@ public class RequestDB extends SQLProvider <Request>  {
 			statement = connect.createStatement();
 			if (statement
 					.execute("CREATE TABLE if not exists "+TABLE_NAME+
-							"(stu_ID  INTEGER PRIMARY KEY AUTOINCREMENT, Name VARCHAR(50), Location VARCHAR(50), snack VARCHAR(50))"))
+							"(stu_ID  INTEGER PRIMARY KEY , Name VARCHAR(50), Location VARCHAR(50), snack VARCHAR(50))"))
 			{
 				logger.debug("Request table created");
 			} 

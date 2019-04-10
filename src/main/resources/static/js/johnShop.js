@@ -10,6 +10,7 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 			  {
 			  	$scope.snacks= response.data;
 			  	console.log($scope.snacks);
-			  	 
+			  	console.log($scope.checklist);
 			  })};
+			  $scope.checklist=[];
 });

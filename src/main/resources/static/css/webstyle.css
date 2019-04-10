@@ -30,7 +30,10 @@ body{
 	min-width:600px;
 	max-width:2000px
 	}
-
+option
+{
+	width: 50px !important; min-width: 50px; max-width: 50px;
+}
 body {
  
  

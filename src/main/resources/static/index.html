@@ -5,7 +5,10 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-
+		  <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 		<title>John's Online Shop</title>
  
@@ -139,7 +142,68 @@
 			
 				
 			<br><br><br><br><br>
+				<div class="container">
+				  <h2>PLACE YOUR ORDER</h2>
+				  <p>Click on the button to SIGN UP].</p>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+				  <div id="demo" class="collapse">
+				    <!-- Material form register -->
+<div class="card">
 
+    <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Sign up</strong>
+    </h5>
+
+    <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+
+        <!-- Form -->
+        <form class="text-center" style="color: #757575;">
+
+            <div class="form-row">
+                <div class="col">
+                    <!-- First name -->
+                    <div class="md-form">
+                        <input type="text" id="materialRegisterFormFirstName" class="form-control" ng-model="user.id">
+                        <label for="materialRegisterFormFirstName">Student ID</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Last name -->
+                    <div class="md-form">
+                        <input type="email" id="materialRegisterFormLastName" class="form-control"ng-model="user.name">
+                        <label for="materialRegisterFormLastName">Name</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="md-form mt-0">
+                <input type="email" id="materialRegisterFormEmail" class="form-control ng-model="user.location"">
+                <label for="materialRegisterFormEmail">Location</label>
+            </div>
+
+            
+            
+            <p>By clicking
+                <em>Sign up</em> you agree to our
+                <a href="" target="_blank">terms of service</a>
+
+        </form>
+        <!-- Form -->
+
+    </div>
+
+</div>
+<!-- Material form register -->
+				  </div>
+				</div>
+	<div class="container">
+				  <h2>PLACE YOUR ORDER</h2>
+				  <p>Click on the button to SIGN UP].</p>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demos">Sign IN</button>
+				  <div id="demos" class="collapse">
+				    <!-- Material form register -->
 		<div class = "successfuldating">
 		 <center><h1 id = "a:link"><a href = "success.html" class="class1">Things You Can Find at John's Shop</a></h1></center> 
 		 
@@ -169,12 +233,38 @@
 
 		<br><br>
 		</div>
+		</div>
+		
 		<div class="success"></div>
-		<div ng-repeat="snack in snacks">
-		<input type="checkbox" ng-checked="chosensnack"checklist-model="user.snack" checklist-value="role"> 
-		{{snack.name}} {{snack.qty}}<select>
-  			<option name="qtty" ng-model="snack.QTY" style="width: 50px !important; min-width: 50px; max-width: 50px;">{{snack.QTY}}</option>
-			</select>
+		
+		<table cellspacing="0" cellpadding="0">
+ 				  <colgroup span="7"></colgroup>
+
+				   <tbody>
+				     <tr class="days">
+				       <th scope="col" title="Name">Select</th>
+				       <th scope="col" title="Name">Name</th>
+				       <th scope="col" title="Instock">Instock</th>
+				       <th scope="col" title="Price">Price</th>
+				       <th scope="col" title="Availabilityy">Quantity</th>
+				       <th scope="col" title="Friday">Fri</th>
+				       <th scope="col" title="Saturday">Sat</th>
+				       <th scope="col" title="Sunday">Sun</th>
+				     </tr>
+       <tr ng-repeat="snack in snacks" ng-model="chosen">
+       <th><input type="checkbox" ng-checked="" ng-model="choice"> </td>
+		<td>{{snack.name}}</td> <td>{{snack.qty}}</td> <td>{{snack.price}}</td> 
+			<td><input ng-model="cust.qty">
+			 
+			
+  			</td>
+  			
+         
+     </tr>
+ </tbody>
+ </table>
+ {{choice}}
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demos">Order</button>
 		</div>
 		<table><center>
 				
