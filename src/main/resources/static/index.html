@@ -164,14 +164,14 @@
                 <div class="col">
                     <!-- First name -->
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" class="form-control" ng-model="user.id">
+                        <input type="text" id="materialRegisterFormFirstName" class="form-control" ng-model="user.stu_ID">
                         <label for="materialRegisterFormFirstName">Student ID</label>
                     </div>
                 </div>
                 <div class="col">
                     <!-- Last name -->
                     <div class="md-form">
-                        <input type="email" id="materialRegisterFormLastName" class="form-control"ng-model="user.name">
+                        <input type="text" id="materialRegisterFormLastName" class="form-control" ng-model="user.Name">
                         <label for="materialRegisterFormLastName">Name</label>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
 
             <!-- E-mail -->
             <div class="md-form mt-0">
-                <input type="email" id="materialRegisterFormEmail" class="form-control ng-model="user.location"">
+                <input type="text" id="materialRegisterFormEmail" class="form-control" ng-model="user.Location">
                 <label for="materialRegisterFormEmail">Location</label>
             </div>
 
@@ -251,20 +251,21 @@
 				       <th scope="col" title="Saturday">Sat</th>
 				       <th scope="col" title="Sunday">Sun</th>
 				     </tr>
-       <tr ng-repeat="snack in snacks" ng-model="chosen">
-       <th><input type="checkbox" ng-checked="" ng-model="choice"> </td>
-		<td>{{snack.name}}</td> <td>{{snack.qty}}</td> <td>{{snack.price}}</td> 
-			<td><input ng-model="cust.qty">
-			 
-			
-  			</td>
-  			
+       <tr  >
+       
+       
+       <select ng-model="choice" ng-options="snack.name + '   ' + snack.model for snack in snacks ">
+					  
+  						</select>
+  						
+     
+    
          
      </tr>
  </tbody>
  </table>
- {{choice}}
-		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demos">Order</button>
+  {{tr}}
+		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demos" ng-click="add()">Order</button>
 		</div>
 		<table><center>
 				

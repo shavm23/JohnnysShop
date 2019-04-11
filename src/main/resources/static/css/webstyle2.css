@@ -21,6 +21,10 @@ width: 100%;
 max-width: 1200px;
 }
 }
+.col
+{
+	color:black;
+}
 div#shell{
 	overflow:hidden;
 	height:100%;
