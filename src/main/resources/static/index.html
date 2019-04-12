@@ -294,30 +294,47 @@
 				       <th scope="col" title="Saturday">Sat</th>
 				       <th scope="col" title="Sunday">Sun</th>
 				     </tr>
-       <tr  >
-       
-       
-        
-    <table>
-      <tr ng-repeat="(key,value) in snacks">
-        <td>
-          <input type="checkbox" ng-model="choice[$index]" ng-true-value="{{value}}" ng-false-value="{{undefined}}" />{{value.name}}   <td> <select name="multipleSelect" id="multipleSelect" ng-model="qty[$index]" multiple>
-      <option value="1">1</option>
-      <option value="2"> 2</option>
-      <option value="3"> 3</option>
-    </select><br>
-        </td>
-      </tr>
-    </table></div>
-  						
-     
-    
-         
-     </tr>
- </tbody>
- </table>
+
  <div class="container">  
- 
+  <div class="container">
+				  <h2>Requests</h2>
+				  <p>Click on the button to see Request</p>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#dems" onclick="showreq">Shoe orders</button>
+				  <div id="dems" class="collapse">
+				   		<h2>Request Table</h2>
+						  <p>The .table-bordered class adds borders to a table:</p>            
+						  <table class="table table-bordered">
+						    <thead>
+						      <tr  >
+						        <th>Checke</th>
+						        <th>snack name</th>
+						        <th>In Stock</th>
+						        <th>QTY</th>
+						        <th>Price</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr ng-repeat="(key,value) in snacks">
+						        <td> <input type="checkbox" ng-model="choice[$index]" ng-true-value="{{value}}" ng-false-value="{{undefined}}" /></td>
+						        <td>{{value.name}}</td>
+						        <td>{{value.qty}}}</td>
+						        <td><select name="multipleSelect" id="multipleSelect" ng-model="qty[$index]" multiple>
+											      <option value="1">1</option>
+											      <option value="2"> 2</option>
+											      <option value="3"> 3</option>
+											    </select></td>
+						        <td>{{value.price}}}</td>
+						      </tr>
+						   
+						    </tbody>
+						  </table>
+										 
+						
+						  </div>	
+			
+				 
+
+  </div>	
  <i class="fas fa-cart-arrow-down" class="btn btn-info" data-toggle="collapse" data-target="#cart"></i>
   
 		 	
