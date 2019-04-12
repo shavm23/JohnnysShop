@@ -3,7 +3,7 @@ var myApp = angular.module('shop',[]);
 myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 		$scope.choice=
 			[];
-		$scope.chosen;
+		$scope.choice=[];
 		$scope.qty=[];
 		$scope.user;
 		$scope.names="";

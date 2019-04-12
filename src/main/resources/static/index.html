@@ -4,7 +4,7 @@
 	<head>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		  <meta name="viewport" content="width=device-width, initial-scale=1">
 		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -258,14 +258,14 @@
     <table>
       <tr ng-repeat="(key,value) in snacks">
         <td>
-          <input type="checkbox" ng-model="choice[$index]" ng-true-value="{{value}}" ng-false-value="{{undefined}}" />{{value.name}}  <select name="multipleSelect" id="multipleSelect" ng-model="qty[$index]" multiple>
-      <option value="option-1">1</option>
-      <option value="option-2"> 2</option>
-      <option value="option-3"> 3</option>
+          <input type="checkbox" ng-model="choice[$index]" ng-true-value="{{value}}" ng-false-value="{{undefined}}" />{{value.name}}   <td> <select name="multipleSelect" id="multipleSelect" ng-model="qty[$index]" multiple>
+      <option value="1">1</option>
+      <option value="2"> 2</option>
+      <option value="3"> 3</option>
     </select><br>
         </td>
       </tr>
-    </table>{{choice}}</div>
+    </table></div>
   						
      
     
@@ -273,15 +273,30 @@
      </tr>
  </tbody>
  </table>
-  {{cart}}
-		<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demos" ng-click="add()">Order</button>
-		</div>
-		<table><center>
-				
-		<br><br>
-
-
+ <div class="container">  
+ 
+ <i class="fas fa-cart-arrow-down" class="btn btn-info" data-toggle="collapse" data-target="#cart"></i>
+  
+		 	
 			
+				  <div class="row" >
+					      <div class="col-sm-6">
+					          <div ng-repeat="chosen in choice">
+					              <label>{{ chosen.name }}</label>
+					          </div>
+					      </div>
+					      <div class="col-sm-6">
+					          <div ng-repeat="qt in qty">
+					              <label>{{ qt }}</label>
+					          </div>
+      </div>
+</div>
+ </div>
+ 
+				  
+				   
+
+  </div>			
 				<footer class="footer-distributed">
 
 					<div class="footer-left">
