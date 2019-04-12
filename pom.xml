@@ -18,7 +18,15 @@
 		<java.version>1.8</java.version>
 	</properties>
 
-	
+<profiles>
+    <profile>
+        <id>profile1</id>
+        <properties>
+          <spring.boot.mainclass>com.Driver</spring.boot.mainclass>
+        </properties>
+    </profile>
+    
+</profiles>	
 <repositories>
         <repository>
             <id>spring-snapshots</id>
@@ -81,6 +89,9 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+                    <mainClass>Ascari.one.Ascaricab.AscariCabApplication</mainClass>
+                </configuration>
 			</plugin>
 		</plugins>
 	</build>
