@@ -7,21 +7,33 @@ public class Request
 	private String snack;
 	private String Location;
 	private String Name;
+	private String qty;
 	
+
+	public String getQty() {
+		return qty;
+	}
+
+
+	public void setQty(String qty) {
+		this.qty = qty;
+	}
+
 
 	public Request()
 	{
-		this(0,"cheese","civic","John Jones");
+		this(0,"cheese","civic","John Jones","2,3");
 	}
 
 		
-	public Request(int stu_ID,  String snack, String Location, String Name) {
+	public Request(int stu_ID,  String snack, String Location, String Name, String qty) {
 		super();
 		this.stu_ID = stu_ID;
 		
 		this.snack = snack;
 		this.Location = Location;
 		this.Name = Name;
+		this.qty = qty;
 		
 	}
 

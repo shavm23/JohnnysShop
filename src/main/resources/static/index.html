@@ -171,7 +171,7 @@
                 <div class="col">
                     <!-- Last name -->
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormLastName" class="form-control" ng-model="user.Name">
+                        <input type="text" id="materialRegisterFormLastName" class="form-control" ng-model="user.name">
                         <label for="materialRegisterFormLastName">Name</label>
                     </div>
                 </div>
@@ -179,7 +179,7 @@
 
             <!-- E-mail -->
             <div class="md-form mt-0">
-                <input type="text" id="materialRegisterFormEmail" class="form-control" ng-model="user.Location">
+                <input type="text" id="materialRegisterFormEmail" class="form-control" ng-model="user.location">
                 <label for="materialRegisterFormEmail">Location</label>
             </div>
 
@@ -254,9 +254,18 @@
        <tr  >
        
        
-       <select ng-model="choice" ng-options="snack.name + '   ' + snack.model for snack in snacks ">
-					  
-  						</select>
+        
+    <table>
+      <tr ng-repeat="(key,value) in snacks">
+        <td>
+          <input type="checkbox" ng-model="choice[$index]" ng-true-value="{{value}}" ng-false-value="{{undefined}}" />{{value.name}}  <select name="multipleSelect" id="multipleSelect" ng-model="qty[$index]" multiple>
+      <option value="option-1">1</option>
+      <option value="option-2"> 2</option>
+      <option value="option-3"> 3</option>
+    </select><br>
+        </td>
+      </tr>
+    </table>{{choice}}</div>
   						
      
     
