@@ -20,7 +20,7 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 		        console.log(newVal[i]); 
 		        console.log($scope.user.snack); 
 		        console.log($scope.qty); 
-		        }
+		        }$scope.showreq();
 		    });
 		
 	$window.onload = function () {$http({
@@ -44,14 +44,14 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 							}).then(function(response)
 									{	
 										console.log($scope.user.snack);
-										$scope.showreq();
+										
 										})};
 		$scope.showreq= function(){$http({
 		  method:'GET',
 			  url:'/api/request/all'})
 			  .then(function(response)
 			  {
-			  	$scope.snacks= response.data;
+			  	$scope.cart= response.data;
 			  	console.log($scope.snacks);
 			  	
 			  })};
