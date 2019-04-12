@@ -1,5 +1,10 @@
 var myApp = angular.module('shop',[]);
-
+myApp.filter('splitString', function () {
+    return function (input) {
+        input = input || '';
+        return input.split(/\s?,\s?/);
+    };
+})
 myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 		$scope.choice=
 			[];
@@ -69,4 +74,29 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 										console.log($scope.user);
 										
 										})};
+	
+										$scope.Pass = true;
+							            $scope.Fail = false;
+							                // Login Usernames
+							            var managerUsername= "topman";        
+
+							                // Login Passwords
+							             var managerPassword="topman";
+							             
+
+							            $scope.login = function()
+							                        {
+							                         
+							                            if ($scope.username  == managerUsername && $scope.password  == managerPassword )
+							                                {
+							                                    return $scope.Pass = false;
+							                                }
+							                            else
+							                                {
+							                                    return $scope.Fail = true;
+							                                } 
+							                        }      
+
+										
+					
 });

@@ -88,7 +88,7 @@ public class RequestDB extends SQLProvider <Request>  {
 					Request.setName(rs.getString("Name"));
 					Request.setLocation(rs.getString("Location"));
 					Request.setsnack(rs.getString("snack"));
-					Request.setsnack(rs.getString("qty"));
+					Request.setQty(rs.getString("qty"));
 					
 					
 					items.add(Request);					

@@ -9,7 +9,11 @@
 		  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-
+		   <meta name="viewport" content="width=device-width, initial-scale=1">
+			  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+			  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+			  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		
 		<title>John's Online Shop</title>
  
 		<script type = "text/javascript" language = "javascript" src = "js/match_harmony.js"></script>
@@ -65,33 +69,72 @@
 
 		<img src="grocery.jpg" usemap="#image-map" width = "1600px" height = "1200px">
 		
-		<form class="m-t" role="form" name="loginToIGraph" >
-               	<center><div id = "nav">
+		<li ng-hide="!Pass">
+		<form n"class="m-t" role="form" name="loginToIGraph" >
+		
+		
+		
+		       	<center><div id = "nav">
                	<center><h3>LOGIN TO THE STORE</h3></center>
 	                <div class="form-group">
-	                    <label>Username</label>		<input type="text" class="form-control" placeholder="Username" required="" ng-model="user.username" ></label>
+	                    <label>Username</label>		<input type="text" class="form-control" placeholder="Username" required="" ng-model="username" ></label>
 	                </div><br>
 	                <div class="form-group">
-	                    <label>Password</label>		<input type="password" class="form-control" placeholder="Password" required="" ng-model="user.password" >
+	                    <label>Password</label>		<input type="password" class="form-control" placeholder="Password" required="" ng-model="password" >
 	                	<a href="#"><small>         Forgot password?</small></a><br>
 	                </div>
-	                <center><button type="submit" class="btn btn-primary block full-width m-b" ng-click="login.loginUser(user)">Login</button>
+	                <center><button ng-model="Pass"  class="btn btn-primary block full-width m-b" ng-click="login()">Login</button>
+	                <button ng-click="login()" ng-model="Pass" > Login </button>
+	                				
 	                </center>
-	                <p class="text-muted text-center"><small>Do not have an account?</small>
-	                <a class="btn btn-sm btn-white btn-block" href="register.html">Create an account</a></p>
-            	</div></center>
+	                
+            	</div></center></div>
             </form>  
-
+</div>
 		<map name="image-map">
 			<area target="" alt="" title="" href="form.html" coords="789,956,1143,1082" shape="rect">
 		</map>
 
-			
+	
 				<p><font size = "5"> 
 
 				<center>
+		
+		
+		
+		</li>
+		
+    <li ng-hide="Pass">  <div class="container">
+				  <h2>Requests</h2>
+				  <p>Click on the button to see Request</p>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#dems" onclick="showreq">Shoe orders</button>
+				  <div id="dems" class="collapse">
+				   		<h2>Request Table</h2>
+						  <p>The .table-bordered class adds borders to a table:</p>            
+						  <table class="table table-bordered">
+						    <thead>
+						      <tr  >
+						        <th>Name</th>
+						        <th>snackname</th>
+						        <th>QTY</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr ng-repeat="buy in cart">>
+						        <td>{{ buy.name}}</td>
+						        <td>{{ buy.snack}}</td>
+						        <td>{{ buy.qty}}</td>
+						      </tr>
+						   
+						    </tbody>
+						  </table>
+										 
+						
+						  </div>	
+			
+				 
 
-
+  </div>	
 
 					<font size = "5"> </font></p>
 
@@ -140,7 +183,7 @@
 		<br><br><br>
 
 			
-				
+			<li ng-hide="!Pass">	
 			<br><br><br><br><br>
 				<div class="container">
 				  <h2>PLACE YOUR ORDER</h2>
@@ -294,9 +337,19 @@
  </div>
  
 				  
-				   
+		<div class="container">
+				  <h2>PLACE YOUR ORDER</h2>
+				  <p>Click on the button to SIGN UP].</p>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#dems" onclick="showreq">Sign in</button>
+				  <div id="dems" class="collapse">
+				   		
+				    <div ng-repeat="buy in cart">   
+				    	  <label>{{ buy.name}} <td>{{ buy.snack}}<br />{{ buy.qty}}</label>
+				    
 
-  </div>			
+  </div>	
+  </div>	
+  </li>	
 				<footer class="footer-distributed">
 
 					<div class="footer-left">
