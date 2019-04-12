@@ -1,15 +1,5 @@
 var myApp = angular.module('shop',[]);
-myApp.filter('splitString', function () {
-    return function (input) {
-        input = input || '';
-        return input.split(/\s?,\s?/);
-    };
-})
-myApp.filter('num', function() {
-    return function(input) {
-       return parseInt(input, 10);
-    }
-});
+
 myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 	$scope.parseInt = parseInt;	
 	$scope.choice=
@@ -28,10 +18,11 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 		        	//$scope.user.snack= $scope.name.toString();
 		        	$scope.user.snack= $scope.name.toString();
 		        	$scope.user.qty= $scope.qty.toString();
+		        	$scope.quantity=$scope.qty.toString();
 		        console.log(newVal[i]); 
 		        console.log($scope.user.snack); 
 		        console.log($scope.qty);
-		        console.log($scope.name);
+		        console.log($scope.quantity);
 		        }$scope.showreq();
 		    });
 		
@@ -47,7 +38,9 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 			  $scope.chosen;
 			  $scope.choice;
 	
-			  $scope.add = function (){$http({
+
+			  
+$scope.add = function (){$http({
 					method:'POST',
 				    url:'/api/request/add',
 				    

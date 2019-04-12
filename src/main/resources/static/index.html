@@ -13,6 +13,11 @@
 			  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 			  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 			  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+			  
+			  
+			  
+			  
+			  
 		
 		<title>John's Online Shop</title>
  
@@ -84,7 +89,7 @@
 	                	<a href="#"><small>         Forgot password?</small></a><br>
 	                </div>
 	                <center><button ng-model="Pass"  class="btn btn-primary block full-width m-b" ng-click="login()">Login</button>
-	                <button ng-click="login()" ng-model="Pass" > Login </button>
+	               
 	                				
 	                </center>
 	                
@@ -207,14 +212,14 @@
                 <div class="col">
                     <!-- First name -->
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" class="form-control" ng-model="user.stu_ID">
+                        <input type="text" id="materialRegisterFormFirstName" class="form-control" required=""ng-model="user.stu_ID">
                         <label for="materialRegisterFormFirstName">Student ID</label>
                     </div>
                 </div>
                 <div class="col">
                     <!-- Last name -->
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormLastName" class="form-control" ng-model="user.name">
+                        <input type="text" id="materialRegisterFormLastName" class="form-control" required=""ng-model="user.name">
                         <label for="materialRegisterFormLastName">Name</label>
                     </div>
                 </div>
@@ -222,7 +227,7 @@
 
             <!-- E-mail -->
             <div class="md-form mt-0">
-                <input type="text" id="materialRegisterFormEmail" class="form-control" ng-model="user.location">
+                <input type="text" id="materialRegisterFormEmail" class="form-control" required="" ng-model="user.location">
                 <label for="materialRegisterFormEmail">Location</label>
             </div>
 
@@ -363,7 +368,7 @@
 						       
 						        <td>{{ chosen.price }}</td>
 						      </tr>
-						   
+						   {{quantity}}
 						    </tbody>
 						  </table>
 										 
