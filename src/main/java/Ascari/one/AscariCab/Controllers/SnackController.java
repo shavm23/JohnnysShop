@@ -81,7 +81,7 @@ public Snack update(@PathVariable(value = "id") int id,@Valid @RequestBody Snack
 			 Snack.setName(details.getName());
 			 Snack.setPrice(details.getPrice());
 			 Snack.setQTY(details.getQTY());
-			 			 
+			 Snack.setPic(details.getPic());			 
 			
 			 Snack.setAVL(details.isAVL());			 
 			 Snackdb.add(Snack);			 

@@ -13,7 +13,7 @@ import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.mysql.cj.jdbc.Blob;
+
 
 import Entity.Snack;
 
@@ -31,7 +31,7 @@ public class SnackDb extends SQLProvider <Snack>
 			statement = connect.createStatement();
 			if (statement
 					.execute("CREATE TABLE if not exists "+TABLE_NAME+
-							"(ID INTEGER PRIMARY KEY AUTOINCREMENT, Price	INTEGER, QTY INTEGER, Name VARCHAR(50),  AVL BOOLEAN )"))
+							"(ID INTEGER PRIMARY KEY AUTOINCREMENT, Price	INTEGER, QTY INTEGER, Name VARCHAR(50),  AVL BOOLEAN, pic VARCHAR(50) )"))
 			{
 				logger.debug("Snack table created");
 			} 
@@ -53,11 +53,12 @@ public class SnackDb extends SQLProvider <Snack>
 	{
 		try{
 			String query = "INSERT INTO "+TABLE_NAME
-					       + "(Price,QTY,Name,AVL)  VALUES (?,?,?,?)";
+					       + "(Price,QTY,Name,AVL,pic)  VALUES (?,?,?,?,?)";
 			PreparedStatement ps = connect.prepareStatement(query);			
 			ps.setInt(1, item.getPrice());
 			ps.setInt(2, item.getQTY());
 			ps.setString(3, item.getName());
+			ps.setString(4, item.getPic());
 			
 			ps.setBoolean(5,item.isAVL());
 			
@@ -77,7 +78,7 @@ public class SnackDb extends SQLProvider <Snack>
 		List<Snack> items = new ArrayList<Snack>();
 		try {
 			Statement statement = connect.createStatement();
-			String sql = "SELECT ID, Price,QTY,Name,AVL from "+TABLE_NAME;
+			String sql = "SELECT ID, Price,QTY,Name,AVL,pic from "+TABLE_NAME;
 			ResultSet rs = statement.executeQuery(sql);
 			if(rs != null) 
 			{
@@ -88,6 +89,7 @@ public class SnackDb extends SQLProvider <Snack>
 					Snack.setPrice(rs.getInt("Price"));
 					Snack.setQTY(rs.getInt("QTY"));
 					Snack.setName(rs.getString("Name"));
+					Snack.setPic(rs.getString("pic"));
 					
 					Snack.setAVL(rs.getBoolean("AVL"));
 					
@@ -123,7 +125,7 @@ public class SnackDb extends SQLProvider <Snack>
 					Snack.setQTY(rs.getInt("QTY"));
 					Snack.setName(rs.getString("Name"));
 					Snack.setAVL(rs.getBoolean("AVL"));
-					
+					Snack.setPic(rs.getString("pic"));
 					
 					return Snack;
 				}								
@@ -143,7 +145,7 @@ public class SnackDb extends SQLProvider <Snack>
 	{		
 		try 
 		{	
-			String query = " UPDATE " +TABLE_NAME+ " SET  Price = ?, QTY = ?, Name = ?, AVL = ?, " +
+			String query = " UPDATE " +TABLE_NAME+ " SET  Price = ?, QTY = ?, Name = ?, AVL = ?, pic = ? " +
 					   " WHERE ID = ?";
 			PreparedStatement ps;		
 			ps = connect.prepareStatement(query);				
@@ -152,7 +154,7 @@ public class SnackDb extends SQLProvider <Snack>
 			ps.setString(3, item.getName());
 			ps.setString(4, item.getName());
 			ps.setBoolean(5,item.isAVL());
-			
+			ps.setString(6, item.getPic());
 			ps.setInt(8,id);
 			return ps.executeUpdate();
 		} 

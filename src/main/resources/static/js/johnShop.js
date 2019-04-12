@@ -5,8 +5,14 @@ myApp.filter('splitString', function () {
         return input.split(/\s?,\s?/);
     };
 })
+myApp.filter('num', function() {
+    return function(input) {
+       return parseInt(input, 10);
+    }
+});
 myApp.controller('Controller',  function($scope,$http,$window,$interval) {
-		$scope.choice=
+	$scope.parseInt = parseInt;	
+	$scope.choice=
 			[];
 		$scope.choice=[];
 		$scope.qty=[];
@@ -21,10 +27,11 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 		        	$scope.name[i]=newVal[i].name;
 		        	//$scope.user.snack= $scope.name.toString();
 		        	$scope.user.snack= $scope.name.toString();
-		        	$scope.user.qty= $scope.qty.join(",");
+		        	$scope.user.qty= $scope.qty.toString();
 		        console.log(newVal[i]); 
 		        console.log($scope.user.snack); 
-		        console.log($scope.qty); 
+		        console.log($scope.qty);
+		        console.log($scope.name);
 		        }$scope.showreq();
 		    });
 		
@@ -57,13 +64,18 @@ myApp.controller('Controller',  function($scope,$http,$window,$interval) {
 			  .then(function(response)
 			  {
 			  	$scope.cart= response.data;
-			  	console.log($scope.snacks);
+			  	console.log($scope.cart);
 			  	
 			  })};
 			  $scope.chosen;
 			  $scope.choice;
-	
-			  $scope.add = function (){$http({
+			 
+			  $scope.add = function ()
+			  {		$scope.user.qty= $scope.qty.toString();
+			  		$scope.user.snack= $scope.name.toString();
+			 		$scope.adds();
+			  }
+			  $scope.adds = function (){$http({
 					method:'POST',
 				    url:'/api/request/add',
 				    

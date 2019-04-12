@@ -107,7 +107,7 @@
     <li ng-hide="Pass">  <div class="container">
 				  <h2>Requests</h2>
 				  <p>Click on the button to see Request</p>
-				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#dems" onclick="showreq">Shoe orders</button>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#dems" onclick="showreq()">Show orders</button>
 				  <div id="dems" class="collapse">
 				   		<h2>Request Table</h2>
 						  <p>The .table-bordered class adds borders to a table:</p>            
@@ -187,8 +187,8 @@
 			<br><br><br><br><br>
 				<div class="container">
 				  <h2>PLACE YOUR ORDER</h2>
-				  <p>Click on the button to SIGN UP].</p>
-				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+				  <p>Click on the button to SIGN UP.</p>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Sign up</button>
 				  <div id="demo" class="collapse">
 				    <!-- Material form register -->
 <div class="card">
@@ -228,9 +228,7 @@
 
             
             
-            <p>By clicking
-                <em>Sign up</em> you agree to our
-                <a href="" target="_blank">terms of service</a>
+    
 
         </form>
         <!-- Form -->
@@ -243,8 +241,8 @@
 				</div>
 	<div class="container">
 				  <h2>PLACE YOUR ORDER</h2>
-				  <p>Click on the button to SIGN UP].</p>
-				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demos">Sign IN</button>
+				  <p>Click on the button to Place order.</p>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demos">Place order</button>
 				  <div id="demos" class="collapse">
 				    <!-- Material form register -->
 		<div class = "successfuldating">
@@ -285,29 +283,20 @@
 
 				   <tbody>
 				     <tr class="days">
-				       <th scope="col" title="Name">Select</th>
-				       <th scope="col" title="Name">Name</th>
-				       <th scope="col" title="Instock">Instock</th>
-				       <th scope="col" title="Price">Price</th>
-				       <th scope="col" title="Availabilityy">Quantity</th>
-				       <th scope="col" title="Friday">Fri</th>
-				       <th scope="col" title="Saturday">Sat</th>
-				       <th scope="col" title="Sunday">Sun</th>
+				       <th scope="col" title="Name">Select Snack</th>
+				     
 				     </tr>
 
- <div class="container">  
-  <div class="container">
-				  <h2>Requests</h2>
-				  <p>Click on the button to see Request</p>
-				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#dems" onclick="showreq">Shoe orders</button>
-				  <div id="dems" class="collapse">
-				   		<h2>Request Table</h2>
+   
+
+				   		<h2>SnackTable</h2>
 						  <p>The .table-bordered class adds borders to a table:</p>            
 						  <table class="table table-bordered">
 						    <thead>
 						      <tr  >
-						        <th>Checke</th>
-						        <th>snack name</th>
+						        <th>Check</th>
+						         <th>Image</th>
+						        <th>Snack name</th>
 						        <th>In Stock</th>
 						        <th>QTY</th>
 						        <th>Price</th>
@@ -316,14 +305,15 @@
 						    <tbody>
 						      <tr ng-repeat="(key,value) in snacks">
 						        <td> <input type="checkbox" ng-model="choice[$index]" ng-true-value="{{value}}" ng-false-value="{{undefined}}" /></td>
+						         <td><img src="{{value.pic}}" style="width:50px;height:50px" /></td>
 						        <td>{{value.name}}</td>
-						        <td>{{value.qty}}}</td>
+						        <td>{{value.qty}}</td>
 						        <td><select name="multipleSelect" id="multipleSelect" ng-model="qty[$index]" multiple>
 											      <option value="1">1</option>
 											      <option value="2"> 2</option>
 											      <option value="3"> 3</option>
 											    </select></td>
-						        <td>{{value.price}}}</td>
+						        <td>{{value.price}}</td>
 						      </tr>
 						   
 						    </tbody>
@@ -335,9 +325,11 @@
 				 
 
   </div>	
- <i class="fas fa-cart-arrow-down" class="btn btn-info" data-toggle="collapse" data-target="#cart"></i>
+ <div class="container">    
   
-		 	
+ <i class="fas fa-cart-arrow-down" class="btn btn-info" data-toggle="collapse" data-target="#cart" ></i>
+  
+		 	<div id="cart" class="collapse">
 			
 				  <div class="row" >
 					      <div class="col-sm-6">
@@ -346,26 +338,44 @@
 					          </div>
 					      </div>
 					      <div class="col-sm-6">
-					          <div ng-repeat="qt in qty">
-					              <label>{{ qt }}</label>
+					          
 					          </div>
       </div>
-</div>
- </div>
- 
-				  
-		<div class="container">
-				  <h2>PLACE YOUR ORDER</h2>
-				  <p>Click on the button to SIGN UP].</p>
-				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#dems" onclick="showreq">Sign in</button>
-				  <div id="dems" class="collapse">
-				   		
-				    <div ng-repeat="buy in cart">   
-				    	  <label>{{ buy.name}} <td>{{ buy.snack}}<br />{{ buy.qty}}</label>
-				    
+
+		 
+				   		<h2>Request Table</h2>
+						  <p>The .table-bordered class adds borders to a table:</p>            
+						  <table class="table table-bordered">
+						    <thead>
+						      <tr  >
+						        
+						         <th>Image</th>
+						        <th>Snack name</th>
+						        <th>QTY</th>
+						        <th>Price</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+						      <tr ng-repeat="chosen in choice">
+						         <td><img src="{{chosen.pic}}" style="width:50px;height:50px" /></td>
+						        <td>{{chosen.name}}</td>
+						        <td ng-repeat="qt in qty[$index]">{{qt}}</td>
+						       
+						        <td>{{ chosen.price }}</td>
+						      </tr>
+						   
+						    </tbody>
+						  </table>
+										 
+						<button type="button" class="btn btn-info"  ng-click="add()">check out</button>
+						  </div>	
+			
+				 
 
   </div>	
-  </div>	
+ 
+				  
+
   </li>	
 				<footer class="footer-distributed">
 
