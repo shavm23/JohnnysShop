@@ -85,11 +85,11 @@ myApp.controller('Loginctrl', ['$scope', function($scope) {
 	        
 	  
 }]);
-myApp.controller('cartController', ['$scope','cartItems', function($scope,cartItems) {
+myApp.controller('cartController', ['$scope','cartItems','$http', function($scope,cartItems,$http) {
 	// console.log(allSnacks.list());
 	$scope.cartItems = cartItems.orders;
 	$scope.user=
-		{
+		{	pic:'',
 			snack:'',
 			qty:''
 		};
@@ -112,8 +112,20 @@ myApp.controller('cartController', ['$scope','cartItems', function($scope,cartIt
 		     console.log($scope.user.snack); 
 		    
 		     console.log($scope.user.qty);
+		     
 		}
 	}
+	$scope.addreq = function (){$http({
+		method:'POST',
+	    url:'/api/request/add',
+	    
+			data: $scope.user
+		
+				}).then(function(response)
+						{	
+							console.log($scope.user.snack);
+							
+							})};
 }]);/*
 myApp.controller('dbcontrolerr', ['$scope','cartItems','cartController', function($scope,cartItems,cartController) {
 	console.log($scope.cartItems);

@@ -26,7 +26,7 @@ public class RequestDB extends SQLProvider <Request>  {
 			statement = connect.createStatement();
 			if (statement
 					.execute("CREATE TABLE if not exists "+TABLE_NAME+
-							"( ID INTEGER PRIMARY KEY AUTOINCREMENT ,stu_ID  INTEGER  , Name VARCHAR(50), Location VARCHAR(50), snack VARCHAR(50), qty INTEGER, pic VARCHAR(50),total INTEGER)"))
+							"( ID INTEGER PRIMARY KEY AUTOINCREMENT ,stu_ID  INTEGER  , Name VARCHAR(50), Location VARCHAR(50), snack VARCHAR(50), qty VARCHAR(50), pic VARCHAR(50),total INTEGER, sum  INTEGER)"))
 			{
 				logger.debug("Request table created");
 			} 
@@ -47,13 +47,13 @@ public class RequestDB extends SQLProvider <Request>  {
 	{
 		try{
 			String query = "INSERT INTO "+TABLE_NAME
-					       + "(stu_ID , Name, Location, snack, qty,pic,total)  VALUES (?,?,?,?,?,?,?)";
+					       + "(stu_ID , Name, Location, snack, qty,pic,total,sum)  VALUES (?,?,?,?,?,?,?,?)";
 			PreparedStatement ps = connect.prepareStatement(query);			
-			ps.setInt(1, item.getstu_ID());
+			ps.setInt(1, item.getStu_ID());
 			ps.setString(2, item.getName());
 			ps.setString(3, item.getLocation());
 			ps.setString(4, item.getsnack());
-			ps.setInt(5, item.getQty());
+			ps.setString(5, item.getQty());
 			ps.setString(6, item.getPic());
 			ps.setInt(7, item.getTotal());
 			
@@ -89,7 +89,7 @@ public class RequestDB extends SQLProvider <Request>  {
 					Request.setName(rs.getString("Name"));
 					Request.setLocation(rs.getString("Location"));
 					Request.setsnack(rs.getString("snack"));
-					Request.setQty(rs.getInt("qty"));
+					Request.setQty(rs.getString("qty"));
 					Request.setPic(rs.getString("pic"));
 					Request.setTotal(rs.getInt("total"));
 					
@@ -126,7 +126,7 @@ public class RequestDB extends SQLProvider <Request>  {
 					Request.setName(rs.getString("Name"));
 					Request.setLocation(rs.getString("Location"));
 					Request.setsnack(rs.getString("snack"));
-					Request.setQty(rs.getInt("qty"));
+					Request.setQty(rs.getString("qty"));
 					Request.setPic(rs.getString("pic"));
 					Request.setTotal(rs.getInt("total"));
 					
@@ -153,11 +153,11 @@ public class RequestDB extends SQLProvider <Request>  {
 			
 			PreparedStatement ps;		
 			ps = connect.prepareStatement(query);				
-			ps.setInt(1, item.getstu_ID());
+			ps.setInt(1,item.getStu_ID());
 			ps.setString(2, item.getName());
 			ps.setString(3, item.getLocation());
 			ps.setString(4, item.getsnack());
-			ps.setInt(5, item.getQty());
+			ps.setString(5, item.getQty());
 			ps.setString(6, item.getPic());
 			ps.setInt(7, item.getTotal());
 			ps.setInt(8,id);
