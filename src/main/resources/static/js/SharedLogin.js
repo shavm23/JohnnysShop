@@ -1,43 +1,33 @@
-var myApp = angular.module('shop',[]);
-myApp.service('SharedLogin', function() {
-  
-  var state = [];
-  var rState = [];
-  
-  var changeState = function(newObj) {
-      state.push(newObj);
-  }
+angular.module('service',[])
 
-  var getState = function(){
-      return state;
-  }
-  var removeState = function()
-  {
-      return state.pop();
-  }
-  
-
-  var changeRState = function(newObj) {
-      rState.push(newObj);
-  }
-
-  var getRState = function(){
-      return rState;
-  }
-  var removeRState = function()
-  {
-      return rState.pop();
-  }
-  
-  
-  return {
-    changeRState : changeRState,
-    getRState: getRState,
-    removeRState : removeRState,
+/*myApp.factory("allSnacks", function($http) { 
+    return {
+        getData: function () {
+            return $http.get("/api/Snack/all'").then(function (response) {
+              return response.data; 
+            });console.log(getData);
+        }
+    }
+});*/
+	
+.service('allReqs', function ($http) {
+	  
+			  this.get = (callback) => 
+			  {
+				  return $http.get('/api/request/all').then(callback)
+			  };
+			  
+          
     
-    changeState : changeState,
-    getState: getState,
-    removeState : removeState
-  };
+})
+.service('allSnacks', function ($http,$window) {
+	  
+	
+	  this.get = (callback) => 
+	  {
+		  return $http.get('/api/Snack/all').then(callback)
+	  };
+	
+
 
 });

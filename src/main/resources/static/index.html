@@ -26,7 +26,8 @@
    		 <script src="js/angular-mocks.js"></script>
 
          <script src="js/johnShop.js"></script>
- 
+          <script src="js/SharedLogin.js"></script>
+ 	
 		<link rel="stylesheet" type="text/css" href="css/webstyle.css">
 		<link rel="icon" href="Logo.png" sizes="180x180" type="image/png" >
  
@@ -37,7 +38,7 @@
 	</head>
 
 
-	<body ng-app="shop" ng-controller="Controller">
+	<body ng-app="shop" ng-controller="Loginctrl" >
 		
 	{{20+10}}
 
@@ -71,11 +72,10 @@
 		</table>
 
 
-
 		<img src="grocery.jpg" usemap="#image-map" width = "1600px" height = "1200px">
 		
 		<li ng-hide="!Pass">
-		<form n"class="m-t" role="form" name="loginToIGraph" >
+		<form n"class="m-t" role="form" name="loginToIGraph"  >
 		
 		
 		
@@ -88,7 +88,8 @@
 	                    <label>Password</label>		<input type="password" class="form-control" placeholder="Password" required="" ng-model="password" >
 	                	<a href="#"><small>         Forgot password?</small></a><br>
 	                </div>
-	                <center><button ng-model="Pass"  class="btn btn-primary block full-width m-b" ng-click="login()">Login</button>
+	                <center><button ng-model="Pass" type="submit"  class="btn btn-primary block full-width m-b" ng-click="login()">Login</button>
+	                
 	               
 	                				
 	                </center>
@@ -109,7 +110,7 @@
 		
 		</li>
 		
-    <li ng-hide="Pass">  <div class="container">
+    <li ng-hide="Pass">  <div class="container" ng-controller="RequestController"  >
 				  <h2>Requests</h2>
 				  <p>Click on the button to see Request</p>
 				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#dems" onclick="showreq()">Show orders</button>
@@ -143,9 +144,9 @@
 
 					<font size = "5"> </font></p>
 
+		</li>			
 					
-					
-			
+		<li ng-hide="!Pass">	
 		 <table>
 			<center>
 		<table align = "center"  height = "90%" width = "70%" >
@@ -188,7 +189,7 @@
 		<br><br><br>
 
 			
-			<li ng-hide="!Pass">	
+				
 			<br><br><br><br><br>
 				<div class="container">
 				
@@ -281,7 +282,7 @@
 		</div>
 		</div>
 		
-		<div class="success"></div>
+		<div class="success"ng-controller="snackController" >
 		
 		<table cellspacing="0" cellpadding="0">
  				  <colgroup span="7"></colgroup>
@@ -309,11 +310,12 @@
 						    </thead>
 						    <tbody>
 						      <tr ng-repeat="(key,value) in snacks">
+						       <td> <button ng-model="Pass" type="submit"  class="btn btn-primary block full-width m-b" ng-click="addItem(value)">Add to cart</button></td>
 						        <td> <input type="checkbox" ng-model="choice[$index]" ng-true-value="{{value}}" ng-false-value="{{undefined}}" /></td>
 						         <td><img src="{{value.pic}}" style="width:50px;height:50px" /></td>
 						        <td>{{value.name}}</td>
 						        <td>{{value.qty}}</td>
-						        <td><select name="multipleSelect" id="multipleSelect" ng-model="qty[$index]" multiple>
+						        <td><select name="multipleSelect" id="multipleSelect" ng-model="value.qtys" >
 											      <option value="1">1</option>
 											      <option value="2"> 2</option>
 											       <option value="3"> 3</option>
@@ -350,7 +352,7 @@
 		 
 				   		<h2>Cart</h2>
 						             
-						  <table class="table table-bordered">
+						  <table class="table table-bordered" ng-controller="cartController">
 						    <thead>
 						      <tr  >
 						        
@@ -361,18 +363,19 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-						      <tr ng-repeat="chosen in choice">
+						      <tr ng-repeat="chosen in cartItems">
 						         <td><img src="{{chosen.pic}}" style="width:50px;height:50px" /></td>
 						        <td>{{chosen.name}}</td>
-						        <td ng-repeat="qt in qty[$index]">{{qt}}</td>
+						        <td >{{chosen.qtys}}</td>
 						       
-						        <td>{{ chosen.price }}</td>
+						       
+						        <td>{{chosen.total }}</td>
 						      </tr>
-						   {{quantity}}
+						   
 						    </tbody>
 						  </table>
 										 
-						<button type="button" class="btn btn-info"  ng-click="add()">check out</button>
+						<button type="button" class="btn btn-info"ng-controller="cartController"  ng-click="adds()">check out</button>
 						  </div>	
 			
 				 
