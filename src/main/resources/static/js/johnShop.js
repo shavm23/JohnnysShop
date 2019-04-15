@@ -46,7 +46,7 @@ myApp.controller('RequestController', ['$scope','allReqs', function($scope,allRe
 	  allReqs.get((response)=>{
 			$scope.cart=response.data;
 			console.log($scope.cart);
-	}
+	} 
 			);
 	        
 	          
@@ -88,11 +88,21 @@ myApp.controller('Loginctrl', ['$scope', function($scope) {
 myApp.controller('cartController', ['$scope','cartItems','$http', function($scope,cartItems,$http) {
 	// console.log(allSnacks.list());
 	$scope.cartItems = cartItems.orders;
+	/*$scope.lname;
+	$scope.fnum;*/
 	$scope.user=
-		{	pic:'',
+   {
+			snack:''
+   }
+	
+		 
+/*	$scope.user=
+		{	name:'',
+			stu_ID:'',
 			snack:'',
-			qty:''
-		};
+			location:''
+		}*/
+	console.log($scope.user);
 	$scope.name=[];
 	$scope.quantity=[];
 	 console.log("run");
@@ -101,15 +111,17 @@ myApp.controller('cartController', ['$scope','cartItems','$http', function($scop
 	{	 console.log("add startn");
 		for( var i = 0; i < $scope.cartItems.length; ++i ) {
 			 console.log( $scope.cartItems[i].name);
+			 $scope.tots=$scope.cartItems[i].total;
 				$scope.name[i]=$scope.cartItems[i].name;
 		     	$scope.quantity[i]=$scope.cartItems[i].qtys;
 		     	//$scope.user.snack= $scope.name.toString();
 		     	
 		     	$scope.user.snack= $scope.name.toString();
 		     	$scope.user.qty= $scope.quantity.toString();
+		     	$scope.user.total= $scope.tots.toString();
 		     	
 		     
-		     console.log($scope.user.snack); 
+		     console.log($scope.user); 
 		    
 		     console.log($scope.user.qty);
 		     
@@ -124,7 +136,7 @@ myApp.controller('cartController', ['$scope','cartItems','$http', function($scop
 				}).then(function(response)
 						{	
 							console.log($scope.user.snack);
-							
+							console.log($scope.user);
 							})};
 }]);/*
 myApp.controller('dbcontrolerr', ['$scope','cartItems','cartController', function($scope,cartItems,cartController) {

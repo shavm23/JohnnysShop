@@ -74,7 +74,7 @@
 
 		<img src="grocery.jpg" usemap="#image-map" width = "1600px" height = "1200px">
 		
-		<li ng-hide="!Pass">
+		<li ng-hide="!Pass" ng-controller="Loginctrl">
 		<form n"class="m-t" role="form" name="loginToIGraph"  >
 		
 		
@@ -130,6 +130,7 @@
 						        <td>{{ buy.name}}</td>
 						        <td>{{ buy.snack}}</td>
 						        <td>{{ buy.qty}}</td>
+						        <td>{{ buy.total}}</td>
 						      </tr>
 						   
 						    </tbody>
@@ -207,13 +208,13 @@
     <div class="card-body px-lg-5 pt-0">
 
         <!-- Form -->
-        <form class="text-center" style="color: #757575;">
+        <form class="text-center" ng-controller="cartController" >
 
-            <div class="form-row">
+            <div class="form-row" >
                 <div class="col">
                     <!-- First name -->
                     <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" class="form-control" required=""ng-model="user.stu_ID">
+                        <input type="text" id="materialRegisterFormFirstName" class="form-control" required="" ng-model="user.stu_ID">{{user.stu_ID}}
                         <label for="materialRegisterFormFirstName">Student ID</label>
                     </div>
                 </div>
