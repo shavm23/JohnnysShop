@@ -81,6 +81,11 @@
     <artifactId>sqlite-jdbc</artifactId>
     <version>3.16.1</version><!--$NO-MVN-MAN-VER$-->
 </dependency>  
+<dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            </dependency>
+
 	</dependencies>
 
 

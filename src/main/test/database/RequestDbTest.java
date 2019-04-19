@@ -11,7 +11,7 @@ public class RequestDbTest extends RequestDB{
 	public void shouldAddToDatabase()
 	{
 		int deff = 1;
-		Request cm = new Request(5612314,"cheese","civic","John Jones","2,3");
+		Request cm = new Request(0,"cheese","a","John Jones","q","3","1",3);
 		RequestDB db = new RequestDB();
 		int success = db.add(cm); 
 		assertEquals(deff,success,0);
@@ -20,7 +20,7 @@ public class RequestDbTest extends RequestDB{
 	@Test
 	public void shouldGetItem()
 	{
-		Request cm = new Request(5612314,"cheese","civic","John Jones","2,3");
+		Request cm = new Request(0,"cheese","a","John Jones","q","3","2",3);
 		int id = 111; 
 		RequestDB db = new RequestDB();
 		Request success = db.get(id);
@@ -31,16 +31,16 @@ public class RequestDbTest extends RequestDB{
 	@Test
 	public void shouldPrintObject()
 	{
-		Request pr = new Request(5612314,"cheese","civic","John Jones","2,3"); 
+		Request pr = new Request(0,"cheese","a","John Jones","q","3","",3); 
 	
 		Request Display = new Request();
 		int vr;
-		vr = Display.getstu_ID();
+		vr = Display.getStu_ID();
 		System.out.println(vr);
 	
 	
 		String mod_l;
-		mod_l = Display.getsnack();
+		mod_l = Display.getSnack();
 		System.out.println(mod_l);
 	
 		String loc;
