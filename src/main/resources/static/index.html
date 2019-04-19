@@ -94,9 +94,9 @@
 	                				
 	                </center>
 	                
-            	</div></center></div>
+            	</div></center></li></div>
             </form>  
-</div>
+			</div>
 		<map name="image-map">
 			<area target="" alt="" title="" href="form.html" coords="789,956,1143,1082" shape="rect">
 		</map>
@@ -108,7 +108,7 @@
 		
 		
 		
-		</li>
+		
 		
     <li ng-hide="Pass">  <div class="container" ng-controller="RequestController"  >
 				  <h2>Requests</h2>
@@ -136,7 +136,7 @@
 						    </tbody>
 						  </table>
 										 
-						
+							</li>
 						  </div>	
 			
 				 
@@ -145,7 +145,7 @@
 
 					<font size = "5"> </font></p>
 
-		</li>			
+				
 					
 		<li ng-hide="!Pass">	
 		 <table>
@@ -263,7 +263,7 @@
 						    <tbody>
 						      <tr ng-repeat="(key,value) in snacks">
 						       <td> <button ng-model="Pass" type="submit"  class="btn btn-primary block full-width m-b" ng-click="addItem(value)">Add to cart</button></td>
-						        <td> <input type="checkbox" ng-model="choice[$index]" ng-true-value="{{value}}" ng-false-value="{{undefined}}" /></td>
+						        
 						         <td><img src="{{value.pic}}" style="width:50px;height:50px" /></td>
 						        <td>{{value.name}}</td>
 						        <td>{{value.qty}}</td>
@@ -384,7 +384,7 @@
         <strong>Sign up</strong>
     </h5>
 
-  
+  </li>
 </div>
 <!-- Material form register -->  
 
@@ -446,7 +446,7 @@
 
 
 
-
+	</li>
 
 
 		<script>

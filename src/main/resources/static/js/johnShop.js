@@ -102,6 +102,7 @@ $scope.stu_ID;
 	console.log($scope.lname);
 	$scope.name=[];
 	$scope.quantity=[];
+	$scope.tots=[];
 	 console.log("run");
 	  console.log($scope.Names);
 	  console.log("name is" ); 
@@ -111,8 +112,8 @@ $scope.stu_ID;
 			 console.log("add fin");
 			 console.log( $scope.cartItems[i].name);
 			 console.log("add fina");
-			 $scope.tots=$scope.cartItems[i].total;
-			 console.log("add fins");
+			 $scope.tots[i]= $scope.cartItems[i].total;
+			 console.log( $scope.tots);
 				$scope.name[i]=$scope.cartItems[i].name; console.log("add finc");
 		     	$scope.quantity[i]=$scope.cartItems[i].qtys;
 		     	 console.log("add find");
@@ -120,7 +121,7 @@ $scope.stu_ID;
 		     	
 		     	$scope.user.snack= $scope.name.toString(); console.log("add fi");
 		     	$scope.user.qty= $scope.quantity.toString(); console.log("add fa");
-		     	$scope.user.total= $scope.tots.toString(); console.log("add fb");
+		     	$scope.user.total= $scope.tots.toString(); 
 		     	
 		     
 		     console.log($scope.user); 
@@ -140,118 +141,4 @@ $scope.stu_ID;
 							console.log($scope.user.snack);
 							console.log($scope.user);
 							})};
-}]);/*
-myApp.controller('dbcontrolerr', ['$scope','cartItems','cartController', function($scope,cartItems,cartController) {
-	console.log($scope.cartItems);
-	/*console.log($scope.cartItems[0].name);*/
-	/*$scope.name=[];
-	$scope.quantity=[];
-	//$scope.cartItems = cartItems.orders;
-	$scope.add = function(){ for( var i = 0; i < cartItems.orders; ++i ) {
-     
-     };
- 
-	
-	  
-	  
-}]);*/
-/*
-myApp.controller('Controller',  function($scope,$http,$window,$interval) {
-
-	$scope.parseInt = parseInt;	
-	$scope.choice=
-			[];
-		$scope.choice=[];
-		$scope.qty=[];
-		$scope.user;
-		$scope.names="";
-		$scope.name=[];
-		//$scope.user.snack= $scope.name.join(";");
-		//$scope.user.snack= "dorito";
-		 
-		  $scope.$watchCollection( 'choice', function(newVal){
-		        for( var i = 0; i < newVal.length; ++i ) {
-		        	$scope.name[i]=newVal[i].name;
-		        	//$scope.user.snack= $scope.name.toString();
-		        	$scope.user.snack= $scope.name.toString();
-		        	$scope.user.qty= $scope.qty.toString();
-		        	$scope.quantity=$scope.qty.toString();
-		        console.log(newVal[i]); 
-		        console.log($scope.user.snack); 
-		        console.log($scope.qty);
-		        console.log($scope.quantity);
-		        }$scope.showreq();
-		    });
-		
-	
-			  $scope.chosen;
-			  $scope.choice;
-	
-
-			  
-$scope.add = function (){$http({
-					method:'POST',
-				    url:'/api/request/add',
-				    
-						data: $scope.user
-					
-							}).then(function(response)
-									{	
-										console.log($scope.user.snack);
-										
-										})};
-		/*$scope.showreq= function(){$http({
-		  method:'GET',
-			  url:'/api/request/all'})
-			  .then(function(response)
-			  {
-			  	$scope.cart= response.data;
-			  	console.log($scope.cart);
-			  	
-			  })};*
-			  $scope.chosen;
-			  $scope.choice;
-			 
-			  $scope.add = function ()
-			  {		$scope.user.qty= $scope.qty.toString();
-			  		$scope.user.snack= $scope.name.toString();
-			 		$scope.adds();
-			  }
-			  $scope.adds = function (){$http({
-					method:'POST',
-				    url:'/api/request/add',
-				    
-						data: $scope.user
-					
-							}).then(function(response)
-									{	
-										console.log($scope.user);
-										
-										})};
-	
-										$scope.Pass = true;
-							            $scope.Fail = false;
-							                // Login Usernames
-							            var managerUsername= "topman";        
-
-							                // Login Passwords
-							             var managerPassword="topman";
-							             
-
-							            $scope.login = function()
-							                        {
-							                         
-							                            if ($scope.username  == managerUsername && $scope.password  == managerPassword )
-							                                {
-							                                    return $scope.Pass = false;
-							                                }
-							                            else
-							                                {
-							                                    return $scope.Fail = true;
-							                                } 
-							                        }      
-
-										
-					
-});
-*/
+}]);

@@ -26,7 +26,7 @@ public class RequestDB extends SQLProvider <Request>  {
 			statement = connect.createStatement();
 			if (statement
 					.execute("CREATE TABLE if not exists "+TABLE_NAME+
-							"( ID INTEGER PRIMARY KEY AUTOINCREMENT ,stu_ID  INTEGER  , Name VARCHAR(50), Location VARCHAR(50), snack VARCHAR(50), qty VARCHAR(50), pic VARCHAR(50),total INTEGER,sum  INTEGER)"))
+							"( ID INTEGER PRIMARY KEY AUTOINCREMENT ,stu_ID  INTEGER  , Name VARCHAR(50), Location VARCHAR(50), snack VARCHAR(50), qty VARCHAR(50), pic VARCHAR(50),total VARCHAR(50),sum  INTEGER)"))
 			{
 				logger.debug("Request table created");
 			} 
@@ -55,7 +55,7 @@ public class RequestDB extends SQLProvider <Request>  {
 			ps.setString(4, item.getSnack());
 			ps.setString(5, item.getQty());
 			ps.setString(6, item.getPic());
-			ps.setInt(7, item.getTotal());
+			ps.setString(7, item.getTotal());
 			ps.setInt(8, item.getSum());
 			
 			return ps.executeUpdate();
@@ -92,8 +92,8 @@ public class RequestDB extends SQLProvider <Request>  {
 					Request.setSnack(rs.getString("snack"));
 					Request.setQty(rs.getString("qty"));
 					Request.setPic(rs.getString("pic"));
-					Request.setTotal(rs.getInt("total"));
-					Request.setTotal(rs.getInt("sum"));
+					Request.setTotal(rs.getString("total"));
+					Request.setSum(rs.getInt("sum"));
 					
 					
 					items.add(Request);					
@@ -130,8 +130,8 @@ public class RequestDB extends SQLProvider <Request>  {
 					Request.setSnack(rs.getString("snack"));
 					Request.setQty(rs.getString("qty"));
 					Request.setPic(rs.getString("pic"));
-					Request.setTotal(rs.getInt("total"));
-					Request.setTotal(rs.getInt("sum"));
+					Request.setTotal(rs.getString("total"));
+					Request.setSum(rs.getInt("sum"));
 					
 					return Request;
 				}								
@@ -162,7 +162,7 @@ public class RequestDB extends SQLProvider <Request>  {
 			ps.setString(4, item.getSnack());
 			ps.setString(5, item.getQty());
 			ps.setString(6, item.getPic());
-			ps.setInt(7, item.getTotal());
+			ps.setString(7, item.getTotal());
 			ps.setInt(8, item.getSum());
 			ps.setInt(9,id);
 			return ps.executeUpdate();

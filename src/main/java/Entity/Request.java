@@ -102,7 +102,7 @@ public class Request
 
 
 
-	public int getTotal() {
+	public String getTotal() {
 		return total;
 	}
 
@@ -110,7 +110,7 @@ public class Request
 
 
 
-	public void setTotal(int total) {
+	public void setTotal(String total) {
 		this.total = total;
 	}
 
@@ -141,19 +141,19 @@ public class Request
 	private String Location;
 	private String Name;
 	private String qty;
-	private int total;
+	private String total;
 	private int sum;
 	
 public Request()
 	{
-		this(0,"cheese","a","John Jones","q","3",4,3);
+		this(0,"cheese","a","John Jones","q","3","",3);
 	}
 
 		
 
 
 
-	public Request(int stu_ID,  String snack, String pic, String Location, String Name, String qty,int total, int sum) {
+	public Request(int stu_ID,  String snack, String pic, String Location, String Name, String qty,String total, int sum) {
 		super();
 		this.stu_ID = stu_ID;
 		this.pic = pic;
