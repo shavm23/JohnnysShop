@@ -194,56 +194,7 @@
 			<br><br><br><br><br>
 				<div class="container">
 				
-				  <p>Click on the button to SIGN UP.</p>
-				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Sign up</button>
-				  <div id="demo" class="collapse">
-				    <!-- Material form register -->
-<div class="card">
 
-    <h5 class="card-header info-color white-text text-center py-4">
-        <strong>Sign up</strong>
-    </h5>
-
-    <!--Card content-->
-    <div class="card-body px-lg-5 pt-0">
-
-        <!-- Form -->
-        <form class="text-center" ng-controller="cartController" >
-
-            <div class="form-row" >
-                <div class="col">
-                    <!-- First name -->
-                    <div class="md-form">
-                        <input type="text" id="materialRegisterFormFirstName" class="form-control" required="" ng-model="user.stu_ID">{{user.stu_ID}}
-                        <label for="materialRegisterFormFirstName">Student ID</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <!-- Last name -->
-                    <div class="md-form">
-                        <input type="text" id="materialRegisterFormLastName" class="form-control" required=""ng-model="user.name">
-                        <label for="materialRegisterFormLastName">Name</label>
-                    </div>
-                </div>
-            </div>
-
-            <!-- E-mail -->
-            <div class="md-form mt-0">
-                <input type="text" id="materialRegisterFormEmail" class="form-control" required="" ng-model="user.location">
-                <label for="materialRegisterFormEmail">Location</label>
-            </div>
-
-            
-            
-    
-
-        </form>
-        <!-- Form -->
-
-    </div>
-
-</div>
-<!-- Material form register -->
 				  </div>
 				</div>
 	<div class="container">
@@ -341,7 +292,7 @@
 				 
 
   </div>	
- <div class="container">    
+ <div class="container" ng-controller="cartController">    
   
  <i class="fas fa-cart-arrow-down" class="btn btn-info" data-toggle="collapse" data-target="#cart" ></i>
   
@@ -353,7 +304,7 @@
 		 
 				   		<h2>Cart</h2>
 						             
-						  <table class="table table-bordered" ng-controller="cartController">
+						  <table class="table table-bordered" >
 						    <thead>
 						      <tr  >
 						        
@@ -374,16 +325,68 @@
 						      </tr>
 						   
 						    </tbody>
+						      <!--Card content-->
+    <div class="card-body px-lg-5 pt-0">
+
+        <!-- Form -->
+        <form class="text-center"  >
+			<div  >   	
+            <div class="form-row" >
+                <div class="col">
+                    <!-- First name -->
+                    <div class="md-form">
+                        <input type="text" id="materialRegisterFormFirstName" class="form-control" required="" ng-model="user.stu_ID">{{user}}
+                        <label for="materialRegisterFormFirstName">Student ID</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <!-- Last name -->
+                    <div class="md-form">
+                        <input type="text" id="materialRegisterFormLastName" class="form-control" required=""ng-model="user.name">
+                        <label for="materialRegisterFormLastName">Name</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-mail -->
+            <div class="md-form mt-0">
+                <input type="text" id="materialRegisterFormEmail" class="form-control" required="" ng-model="user.location">
+                <label for="materialRegisterFormEmail">Location</label>
+            </div>
+
+            
+            
+    
+
+        </form> </div>
+		
+        <!-- Form -->
+
+			    
 						  </table>
 										 
-						<button type="button" class="btn btn-info"ng-controller="cartController"  ng-click="adds();addreq()">check out</button>
+						<button type="button" class="btn btn-info"  ng-click="adds();addreq()">check out</button>
 						  </div>	
 			
 				 
 
   </div>	
  
-	   </div>			  
+	   </div>
+	   </div>		
+				  <p>Click on the button to SIGN UP.</p>
+				  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Sign up</button>
+				  <div id="demo" class="collapse">
+				    <!-- Material form register -->
+<div class="card" ng-controller="cartController">
+
+    <h5 class="card-header info-color white-text text-center py-4">
+        <strong>Sign up</strong>
+    </h5>
+
+  
+</div>
+<!-- Material form register -->  
 
   </li>	
 				<footer class="footer-distributed">
